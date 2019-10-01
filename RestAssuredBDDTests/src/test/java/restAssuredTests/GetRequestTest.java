@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.*;
 
 public class GetRequestTest {
 	
-	@Test
+	@Test()
 	public void GRT() {
 		
 		given()
@@ -18,10 +18,15 @@ public class GetRequestTest {
 		.then()
 				.statusCode(200)
 				.statusLine("HTTP/1.1 200 OK")
-				.assertThat().body("total", equalTo("12"))
-				.header("Content-Type", "application/json");
+				.assertThat().body("total", equalTo(12))
+				.header("Content-Type", "application/json; charset=utf-8");
 		
 		
+	}
+	
+	@Test
+	public void test1() {
+		System.out.println("RK successful");
 	}
 
 }
